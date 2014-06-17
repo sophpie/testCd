@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name=”ApplicationBuildName” basedir=”.” default=”unittest”>
-	<target name=”unittest”>
-		<phpunit bootstrap=”tests/Bootstrap.php”>
-			<formatter type=”summary” usefile=”false” />
+<project name="ApplicationBuildName" basedir="." default="unittest">
+	<target name="unittest">
+		<phpunit bootstrap="tests/Bootstrap.php">
+			<formatter type="summary" usefile="false" />
 			<batchtest>
-				<fileset dir=”tests”>
-					<include name=”**/*Test.php” />
+				<fileset dir="tests">
+					<include name="**/*Test.php" />
 				</fileset>
 			</batchtest>
 		</phpunit>
 	</target>
-	<target name=”zpk” depends=”unittest”>
-		<exec command=”php / usr / local / bin / zs-client.phar packZpk -
+	<target name="zpk" depends="unittest">
+		<exec command="php / usr / local / bin / zs-client.phar packZpk -
 			folder=’${project.basedir}’ - destination=’${project.basedir}’ -
-			name=’application.zpk’” checkreturn=”true” />
+			name=’application.zpk’" checkreturn="true" />
 	</target>
-	<target name=”deploy” depends=”zpk”>
-		<exec command=”php / usr / local / bin / zs-client.phar
+	<target name="deploy" depends="zpk">
+		<exec command="php / usr / local / bin / zs-client.phar
 			installApp - zpk=’${project.basedir}/application. zpk ’ zsurl=’${host}’ -
 			zskey=’${key}’ - zssecret=’${secret}’ - baseUri=’${base}’ -
-			userAppName=’${app}’ - userParams=’${params}’” checkreturn=”true” />
+			userAppName=’${app}’ - userParams=’${params}’" checkreturn="true" />
 	</target>
 </project>
