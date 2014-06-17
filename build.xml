@@ -2,10 +2,12 @@
 
 <project name="ApplicationBuildName" basedir="." default="unittest">
 	<target name="unittest">
-	   <exec command="phpunit --bootstrap tests/Bootstrap.php --configuration tests/phpunit.xml.dist"/>
+		<exec
+			command="phpunit --bootstrap tests/Bootstrap.php --configuration tests/phpunit.xml.dist" />
 	</target>
-	
+
 	<target name="zpk" depends="unittest">
-		<exec command="php /usr/local/bin/php zfdeploy.phar build gotcms.zpk" checkreturn="true" />
+		<exec command="php /usr/local/bin/zs-client.phar packZpk --folder=’${project.basedir}’ --destination=’${project.basedir}’ --name=’application.zpk’" checkreturn="true"/>
 	</target>
+
 </project>
