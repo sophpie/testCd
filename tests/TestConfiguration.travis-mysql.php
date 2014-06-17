@@ -25,7 +25,7 @@
  */
 
 define('GC_DATABASE_DRIVER', 'pdo_mysql');
-define('GC_DATABASE_USERNAME', 'travis');
-define('GC_DATABASE_PASSWORD', '');
-define('GC_DATABASE_DATABASE', 'gotcms_tests');
+define('GC_DATABASE_USERNAME', 'root');
+define('GC_DATABASE_PASSWORD', 'QScv1975');
+define('GC_DATABASE_DATABASE', 'gotcms');
 define('GC_DATABASE_HOSTNAME', 'localhost');
