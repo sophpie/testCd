@@ -2,14 +2,7 @@
 
 <project name="ApplicationBuildName" basedir="." default="unittest">
 	<target name="unittest">
-		<phpunit bootstrap="tests/Bootstrap.php">
-			<formatter type="summary" usefile="false" />
-			<batchtest>
-				<fileset dir="tests">
-					<include name="**/*Test.php" />
-				</fileset>
-			</batchtest>
-		</phpunit>
+	   <exec command="phpunit --bootstrap tests/Bootstrap.php --configuration tests/phpunit.xml.dist"/>
 	</target>
 	<target name="zpk" depends="unittest">
 		<exec command="php / usr / local / bin / zs-client.phar packZpk -
