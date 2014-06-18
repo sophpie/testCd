@@ -6,4 +6,5 @@
     </version>
     <appdir>data</appdir>
     <docroot>data/public</docroot>
+    <scriptsdir>deploy</scriptsdir>
 </package>

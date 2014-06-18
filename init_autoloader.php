@@ -36,13 +36,13 @@ if (file_exists('vendor/autoload.php')) {
 
 $zfPath = false;
 
-if (getenv('ZF2_PATH')) { // Support for ZF2_PATH environment variable or git submodule
+/*if (getenv('ZF2_PATH')) { // Support for ZF2_PATH environment variable or git submodule
     $zfPath = getenv('ZF2_PATH');
 } elseif (get_cfg_var('zf2_path')) { // Support for zf2_path directive value
     $zfPath = get_cfg_var('zf2_path');
-} elseif (is_dir('vendor/Zend')) {
+} elseif (is_dir('vendor/Zend')) {*/
     $zfPath = 'vendor';
-}
+//}
 
 if ($zfPath) {
     // Get application stack configuration
